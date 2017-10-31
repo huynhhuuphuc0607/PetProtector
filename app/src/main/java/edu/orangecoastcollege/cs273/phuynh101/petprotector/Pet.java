@@ -6,64 +6,122 @@ import android.net.Uri;
  * Created by phuynh101 on 10/26/2017.
  */
 
+/**
+ * Pet
+ */
 public class Pet {
     private int mId;
     private String mName;
     private String mDetails;
     private String mPhone;
-    private Uri mImageNameUri;
+    private Uri mImageUri;
 
-    public Pet(String mName, String mDetails, String mPhone, Uri mImageNameUri) {
-        this.mName = mName;
-        this.mDetails = mDetails;
-        this.mPhone = mPhone;
-        this.mImageNameUri = mImageNameUri;
+    /**
+     * Constructor
+     * @param name name
+     * @param details details
+     * @param phone phone number
+     * @param imageNameUri image uri
+     */
+    public Pet(String name, String details, String phone, Uri imageNameUri) {
+        this.mName = name;
+        this.mDetails = details;
+        this.mPhone = phone;
+        this.mImageUri = imageNameUri;
     }
 
-    public Pet(int mId, String mName, String mDetails, String mPhone, Uri mImageNameUri) {
-        this.mId = mId;
-        this.mName = mName;
-        this.mDetails = mDetails;
-        this.mPhone = mPhone;
-        this.mImageNameUri = mImageNameUri;
+    /**
+     * Constructor with id
+     * @param id unique id of the pet
+     * @param name name
+     * @param details details
+     * @param phone phone number
+     * @param imageNameUri image uri
+     */
+    public Pet(int id, String name, String details, String phone, Uri imageNameUri) {
+        this.mId = id;
+        this.mName = name;
+        this.mDetails = details;
+        this.mPhone = phone;
+        this.mImageUri = imageNameUri;
     }
 
+    /**
+     * get id of the pet
+     * @return id
+     */
     public int getId() {
         return mId;
     }
 
+    /**
+     * get name of the pet
+     * @return name
+     */
     public String getName() {
         return mName;
     }
 
-    public void setName(String mName) {
-        this.mName = mName;
+    /**
+     * set the name of the pet
+     * @param name name
+     */
+    public void setName(String name) {
+        this.mName = name;
     }
 
+    /**
+     * get details of the pet
+     * @return details
+     */
     public String getDetails() {
         return mDetails;
     }
 
-    public void setDetails(String mDetails) {
-        this.mDetails = mDetails;
+    /**
+     * set the new details
+     * @param details details
+     */
+    public void setDetails(String details) {
+        this.mDetails = details;
     }
 
+    /**
+     * get the phone number
+     * @return phone number
+     */
     public String getPhone() {
         return mPhone;
     }
 
-    public void setPhone(String mPhone) {
-        this.mPhone = mPhone;
+    /**
+     * set the new phone number
+     * @param phone phone number
+     */
+    public void setPhone(String phone) {
+        this.mPhone = phone;
     }
 
-    public Uri getImageNameUri() {
-        return mImageNameUri;
+    /**
+     * get the image uri
+     * @return the image uri
+     */
+    public Uri getImageUri() {
+        return mImageUri;
     }
 
-    public void setImageNameUri(Uri mImageNameUri) {
-        this.mImageNameUri = mImageNameUri;
+    /**
+     * set the new image uri
+     * @param imageNameUri the image uri
+     */
+    public void setImageUri(Uri imageNameUri) {
+        this.mImageUri = imageNameUri;
     }
 
+    /**
+     * provides developers with information of the pet
+     * @return information
+     */
     @Override
     public String toString() {
         return "Pet{" +
@@ -71,7 +129,7 @@ public class Pet {
                 ", mName='" + mName + '\'' +
                 ", mDetails='" + mDetails + '\'' +
                 ", mPhone='" + mPhone + '\'' +
-                ", mImageNameUri=" + mImageNameUri +
+                ", mImageUri=" + mImageUri +
                 '}';
     }
 }

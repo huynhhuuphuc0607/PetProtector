@@ -13,46 +13,51 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25sp"
+        android:textColor="@color/steel_blue"
+        android:text="@string/enter_pet"/>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/none" />
+        android:id="@+id/petImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:onClick="selectPetImage"
+        app:srcCompat="@drawable/none"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/car_price"/>
+        android:hint="@string/name"
+        android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/detailsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/dollar_sign"/>
+        android:hint="@string/pet_details"
+        android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="phone"
-        android:hint="@string/go_data_entry"/>
+        android:hint="@string/phone_number"
+        android:inputType="phone"/>
 
     <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:onClick="addPet"
+        android:text="@string/add_pet"/>
 
     <ListView
+        android:id="@+id/petsListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>

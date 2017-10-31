@@ -16,7 +16,7 @@ import java.util.List;
 
 class DBHelper extends SQLiteOpenHelper{
 
-    static final String DATABASE_NAME = "PetProtector";
+    private static final String DATABASE_NAME = "PetProtector";
     private static final String DATABASE_TABLE = "Pets";
     private static final int DATABASE_VERSION = 1;
 
@@ -36,7 +36,7 @@ class DBHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String createTable = "CREATE TABLE " + DATABASE_TABLE + "("
-                + KEY_FIELD_ID + "INTEGER AUTO INCREMENT PRIMARY KEY, "
+                + KEY_FIELD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + FIELD_NAME + " TEXT, "
                 + FIELD_DETAILS + " TEXT, "
                 + FIELD_PHONE + " TEXT, "
@@ -60,7 +60,7 @@ class DBHelper extends SQLiteOpenHelper{
         values.put(FIELD_NAME, mPet.getName());
         values.put(FIELD_DETAILS, mPet.getDetails());
         values.put(FIELD_PHONE, mPet.getPhone());
-        values.put(FIELD_IMAGE_URI, mPet.getImageNameUri().toString());
+        values.put(FIELD_IMAGE_URI, mPet.getImageUri().toString());
 
         db.insert(DATABASE_TABLE, null, values);
         db.close();
@@ -82,7 +82,6 @@ class DBHelper extends SQLiteOpenHelper{
                         mCursor.getString(3), Uri.parse(mCursor.getString(4)));
                 mPetsList.add(mPet);
             }while(mCursor.moveToNext());
-
         }
 
         db.close();
